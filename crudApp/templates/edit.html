@@ -1,0 +1,15 @@
+{% load static %}
+<body>
+    <div class="container edit mt-5 text-center">
+        <div class="alert alert-info text-center">Update Student Data</div>
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            {% for form in fm %}
+            <br>
+            <span class="text-danger">{{form.errors}}</span><br>
+            <label>{{form.label}}</label> {{form}}<br>
+            {% endfor %}<br>
+            <button class="btn btn-primary btn-block" name="update">Update</button>
+        </form>
+    </div>
+</body>
